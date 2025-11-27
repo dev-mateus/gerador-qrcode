@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gerador de QR Code para URLs - Gratuito e Fácil de Usar">
+    <title>Gerador de QR Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gerador de QR Code</h1>
+            <p class="subtitle">Transforme URLs em QR Codes rapidamente</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <label for="url-input">Digite a URL:</label>
+                <input 
+                    type="url" 
+                    id="url-input" 
+                    placeholder="https://exemplo.com.br"
+                    aria-label="Campo para inserir URL"
+                >
+                <button id="generate-btn" class="btn btn-primary">Gerar QR Code</button>
+                <p id="error-message" class="error-message"></p>
+            </div>
+
+            <div id="qrcode-section" class="qrcode-section hidden">
+                <div id="qrcode" class="qrcode-display"></div>
+                <button id="download-btn" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 12l-4-4h2.5V4h3v4H12l-4 4z"/>
+                        <path d="M14 13v1H2v-1h12z"/>
+                    </svg>
+                    Download QR Code
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Desenvolvido com ❤️ | QR Code Generator</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
