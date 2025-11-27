@@ -5,8 +5,24 @@ const downloadBtn = document.getElementById('download-btn');
 const qrcodeSection = document.getElementById('qrcode-section');
 const qrcodeDisplay = document.getElementById('qrcode');
 const errorMessage = document.getElementById('error-message');
+const themeToggle = document.getElementById('theme-toggle');
 
 let qrCodeInstance = null;
+
+// Função para alternar tema
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
+// Carregar tema salvo
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+}
 
 // Função para validar URL
 function isValidURL(string) {
@@ -119,6 +135,11 @@ function downloadQRCode() {
 generateBtn.addEventListener('click', generateQRCode);
 
 downloadBtn.addEventListener('click', downloadQRCode);
+
+themeToggle.addEventListener('click', toggleTheme);
+
+// Carregar tema ao iniciar
+loadTheme();
 
 // Permitir gerar QR Code pressionando Enter
 urlInput.addEventListener('keypress', (e) => {
