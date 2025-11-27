@@ -31,7 +31,7 @@ function showError(message) {
 
 // Função para gerar QR Code
 function generateQRCode() {
-    const url = urlInput.value.trim();
+    let url = urlInput.value.trim();
     
     // Limpar erro anterior
     clearError();
@@ -42,8 +42,14 @@ function generateQRCode() {
         return;
     }
     
+    // Adicionar https:// se não tiver protocolo
+    if (!url.match(/^https?:\/\//i)) {
+        url = 'https://' + url;
+        urlInput.value = url; // Atualizar o campo visual
+    }
+    
     if (!isValidURL(url)) {
-        showError('URL inválida. Certifique-se de incluir http:// ou https://');
+        showError('URL inválida. Por favor, verifique o endereço digitado.');
         return;
     }
     
