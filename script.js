@@ -18,11 +18,28 @@ function toggleTheme() {
     localStorage.setItem('theme', newTheme);
 }
 
-// Carregar tema salvo
+// Carregar tema salvo ou detectar preferência do sistema
 function loadTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme) {
+        // Se há tema salvo, usar ele
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    } else {
+        // Caso contrário, detectar preferência do sistema
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const systemTheme = prefersDark ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', systemTheme);
+    }
 }
+
+// Detectar mudanças na preferência do sistema (se não houver preferência salva)
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        const newTheme = e.matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+    }
+});
 
 // Função para validar URL
 function isValidURL(string) {

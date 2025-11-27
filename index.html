@@ -3,8 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gerador de QR Code para URLs - Gratuito e Fácil de Usar">
-    <title>Gerador de QR Code</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Gerador de QR Code Online Grátis | Converta URLs em QR Code</title>
+    <meta name="title" content="Gerador de QR Code Online Grátis | Converta URLs em QR Code">
+    <meta name="description" content="Crie QR Codes gratuitamente em segundos! Transforme URLs em QR Codes, baixe em PNG com alta qualidade. Ferramenta gratuita, rápida e responsiva.">
+    <meta name="keywords" content="gerador qr code, qr code grátis, criar qr code, qr code online, gerador qr code url, qr code gratuito">
+    <meta name="author" content="Mateus">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dev-mateus.github.io/gerador-qrcode/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dev-mateus.github.io/gerador-qrcode/">
+    <meta property="og:title" content="Gerador de QR Code Online Grátis">
+    <meta property="og:description" content="Crie QR Codes gratuitamente em segundos! Transforme URLs em QR Codes e baixe em PNG.">
+    <meta property="og:image" content="https://dev-mateus.github.io/gerador-qrcode/og-image.png">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dev-mateus.github.io/gerador-qrcode/">
+    <meta property="twitter:title" content="Gerador de QR Code Online Grátis">
+    <meta property="twitter:description" content="Crie QR Codes gratuitamente em segundos! Transforme URLs em QR Codes e baixe em PNG.">
+    <meta property="twitter:image" content="https://dev-mateus.github.io/gerador-qrcode/og-image.png">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231877f2'/><rect x='10' y='10' width='30' height='30' fill='white'/><rect x='60' y='10' width='30' height='30' fill='white'/><rect x='10' y='60' width='30' height='30' fill='white'/><rect x='60' y='60' width='30' height='30' fill='white'/></svg>">
+    
+    <!-- Performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1877f2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a1929" media="(prefers-color-scheme: dark)">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Gerador de QR Code",
+      "description": "Ferramenta gratuita para criar QR Codes a partir de URLs",
+      "url": "https://dev-mateus.github.io/gerador-qrcode/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Mateus",
+        "url": "https://github.com/dev-mateus"
+      }
+    }
+    </script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%231877f2'/><rect x='20' y='20' width='60' height='60' fill='white'/><rect x='112' y='20' width='60' height='60' fill='white'/><rect x='20' y='112' width='60' height='60' fill='white'/><rect x='112' y='112' width='60' height='60' fill='white'/></svg>">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,8 +73,8 @@
         <header>
             <div class="header-top">
                 <h1>Gerador de QR Code</h1>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
-                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar entre tema claro e escuro" title="Alternar tema">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <circle cx="12" cy="12" r="5"/>
                         <line x1="12" y1="1" x2="12" y2="3"/>
                         <line x1="12" y1="21" x2="12" y2="23"/>
@@ -24,7 +85,7 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
                     </svg>
-                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                     </svg>
                 </button>
@@ -33,37 +94,53 @@
         </header>
 
         <main>
-            <div class="input-section">
+            <section class="input-section" aria-labelledby="input-heading">
+                <h2 id="input-heading" class="visually-hidden">Criar QR Code</h2>
                 <label for="url-input">Digite a URL:</label>
                 <input 
                     type="url" 
                     id="url-input" 
                     placeholder="https://exemplo.com.br"
                     aria-label="Campo para inserir URL"
+                    aria-describedby="error-message"
+                    autocomplete="url"
+                    spellcheck="false"
                 >
-                <button id="generate-btn" class="btn btn-primary">Gerar QR Code</button>
-                <p id="error-message" class="error-message"></p>
-            </div>
+                <button id="generate-btn" class="btn btn-primary" aria-label="Gerar QR Code da URL informada">Gerar QR Code</button>
+                <p id="error-message" class="error-message" role="alert" aria-live="polite"></p>
+            </section>
 
-            <div id="qrcode-section" class="qrcode-section hidden">
-                <div id="qrcode" class="qrcode-display"></div>
-                <button id="download-btn" class="btn btn-secondary">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <section id="qrcode-section" class="qrcode-section hidden" aria-labelledby="qrcode-heading">
+                <h2 id="qrcode-heading" class="visually-hidden">QR Code Gerado</h2>
+                <div id="qrcode" class="qrcode-display" role="img" aria-label="QR Code gerado"></div>
+                <button id="download-btn" class="btn btn-secondary" aria-label="Baixar QR Code como imagem PNG">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                         <path d="M8 12l-4-4h2.5V4h3v4H12l-4 4z"/>
                         <path d="M14 13v1H2v-1h12z"/>
                     </svg>
                     Download QR Code
                 </button>
-            </div>
+            </section>
         </main>
 
         <footer>
-            <p>© 2025 QR Code Generator. Todos os direitos reservados.</p>
-            <p>Desenvolvido por <a href="https://github.com/dev-mateus" target="_blank" rel="noopener noreferrer">Mateus</a></p>
+            <p>&copy; 2025 QR Code Generator. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="https://github.com/dev-mateus" target="_blank" rel="noopener noreferrer" aria-label="Visite o perfil do GitHub de Mateus">Mateus</a></p>
         </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/gerador-qrcode/service-worker.js')
+                    .then(registration => console.log('SW registered:', registration))
+                    .catch(error => console.log('SW registration failed:', error));
+            });
+        }
+    </script>
 </body>
 </html>
